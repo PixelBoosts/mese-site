@@ -215,40 +215,59 @@
   });
 </script>
 
-  <script>
-  let currentSlide = 0;
-  let slides = document.querySelectorAll('.slider .slide');
-  let interval = setInterval(nextSlide, 4000);
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === index) slide.classList.add('active');
-    });
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  function pauseSlider() {
-    clearInterval(interval);
-  }
-
-  function resumeSlider() {
-    interval = setInterval(nextSlide, 4000);
-  }
-
-  // Inițializare
+<script>
   document.addEventListener("DOMContentLoaded", () => {
-    slides = document.querySelectorAll('.slider .slide');
-    showSlide(currentSlide);
+    const sliders = document.querySelectorAll('.slider');
+
+    sliders.forEach((slider) => {
+      let slides = slider.querySelectorAll('.slide');
+      let currentSlide = 0;
+      let interval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) slide.classList.add('active');
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      slider.querySelector('.next').addEventListener('click', () => {
+        pauseSlider();
+        nextSlide();
+        resumeSlider();
+      });
+
+      slider.querySelector('.prev').addEventListener('click', () => {
+        pauseSlider();
+        prevSlide();
+        resumeSlider();
+      });
+
+      function pauseSlider() {
+        clearInterval(interval);
+      }
+
+      function resumeSlider() {
+        interval = setInterval(nextSlide, 4000);
+      }
+
+      slider.addEventListener('mouseover', pauseSlider);
+      slider.addEventListener('mouseout', resumeSlider);
+
+      // Initialize slider
+      showSlide(currentSlide);
+      resumeSlider();
+    });
   });
 </script>
 
