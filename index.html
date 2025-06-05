@@ -3,35 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Slider și Contact WhatsApp</title>
+  <title>Slider cu Fade-in</title>
   <style>
-    /* Reset simplu */
-    * {
-      box-sizing: border-box;
-    }
+    /* CSS simplu pentru slider și fade-in */
     body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
       margin: 0; padding: 0;
+      background: #f0f0f0;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
     }
-    /* Slider container */
     .slider {
       position: relative;
       width: 90%;
       max-width: 600px;
       height: 350px;
-      margin: 30px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin: 40px 0;
       overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       background: #fff;
     }
-    /* Slide imagini */
     .slide {
       position: absolute;
       width: 100%;
@@ -40,105 +34,62 @@
       transition: opacity 0.6s ease-in-out;
       background-size: cover;
       background-position: center;
-      border-radius: 10px;
     }
     .slide.active {
       opacity: 1;
       position: relative;
       z-index: 1;
     }
-    /* Butoane slider */
     .prev, .next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      border: none;
+      background: rgba(0,0,0,0.5);
       color: white;
-      font-size: 22px;
-      padding: 12px 16px;
+      border: none;
+      padding: 12px 18px;
+      font-size: 18px;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 3px;
       user-select: none;
-      transition: background-color 0.3s ease;
-      z-index: 10;
     }
     .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.8);
     }
     .prev {
-      left: 15px;
+      left: 10px;
     }
     .next {
-      right: 15px;
+      right: 10px;
     }
-    /* Fade-in text */
+    /* Fade-in elements */
     .fade-in {
       opacity: 0;
-      max-width: 600px;
-      margin: 15px auto;
+      margin: 20px 0;
       font-size: 1.2rem;
-      color: #222;
+      color: #333;
+      max-width: 600px;
       text-align: center;
-      transition: opacity 1s ease-in-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-    }
-    /* WhatsApp contact button */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25D366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
-      z-index: 1000;
-    }
-    .whatsapp-button:hover {
-      background-color: #1ebe57;
-    }
-    /* WhatsApp icon SVG styling */
-    .whatsapp-icon {
-      fill: white;
-      width: 32px;
-      height: 32px;
     }
   </style>
 </head>
 <body>
-
-  <!-- Slider -->
-  <div class="slider" aria-label="Galerie imagini">
-    <div class="slide active" style="background-image: url('https://picsum.photos/id/1018/600/350');" aria-hidden="false"></div>
-    <div class="slide" style="background-image: url('https://picsum.photos/id/1015/600/350');" aria-hidden="true"></div>
-    <div class="slide" style="background-image: url('https://picsum.photos/id/1019/600/350');" aria-hidden="true"></div>
+  
+  <div class="slider">
+    <div class="slide active" style="background-image: url('https://picsum.photos/id/1018/600/350');"></div>
+    <div class="slide" style="background-image: url('https://picsum.photos/id/1015/600/350');"></div>
+    <div class="slide" style="background-image: url('https://picsum.photos/id/1019/600/350');"></div>
 
     <button class="prev" aria-label="Slide anterior">&#10094;</button>
     <button class="next" aria-label="Slide următor">&#10095;</button>
   </div>
 
-  <!-- Texte cu fade-in -->
-  <p class="fade-in">Bine ai venit pe pagina noastră! Vezi cele mai bune imagini în slider.</p>
-  <p class="fade-in">Pentru întrebări, contactează-ne rapid pe WhatsApp folosind butonul verde din dreapta jos.</p>
-
-  <!-- Buton WhatsApp fix -->
-  <a href="https://wa.me/40712345678" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Contactează-ne pe WhatsApp">
-    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M20.52 3.48a11.81 11.81 0 0 0-16.69 0c-4.62 4.62-4.62 12.13 0 16.75l-1.72 5.16 5.34-1.66a11.77 11.77 0 0 0 6.47 1.99c6.57 0 11.92-5.34 11.92-11.92a11.82 11.82 0 0 0-5.32-10.32Zm-8.42 16.2a8.8 8.8 0 0 1-4.65-1.33l-.33-.2-3.11.97 1.04-3.03-.22-.34a8.86 8.86 0 1 1 7.27 3.93Zm5.3-7.1c-.29-.14-1.7-.83-1.97-.92-.27-.1-.47-.14-.67.14-.2.29-.78.92-.95 1.11-.17.2-.34.22-.63.08-.29-.14-1.23-.45-2.35-1.44-.87-.77-1.46-1.73-1.63-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.2.05-.37-.02-.51-.07-.14-.67-1.61-.92-2.2-.24-.57-.48-.49-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.53.07-.81.37-.28.3-1.07 1.05-1.07 2.55 0 1.5 1.1 2.95 1.25 3.16.14.2 2.15 3.29 5.21 4.61.73.31 1.3.5 1.75.64.74.23 1.42.2 1.96.12.6-.1 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.35-.07-.13-.26-.2-.55-.35Z"/>
-    </svg>
-  </a>
+  <p class="fade-in">Acesta este un exemplu de text care apare cu efect fade-in.</p>
+  <p class="fade-in">Poți pune aici orice conținut dorești să apară elegant.</p>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Slider funcțional
+      // Slider
       const slides = document.querySelectorAll('.slide');
       const prevBtn = document.querySelector('.prev');
       const nextBtn = document.querySelector('.next');
@@ -146,9 +97,7 @@
 
       function showSlide(index) {
         slides.forEach((slide, i) => {
-          const isActive = i === index;
-          slide.classList.toggle('active', isActive);
-          slide.setAttribute('aria-hidden', !isActive);
+          slide.classList.toggle('active', i === index);
         });
       }
 
@@ -168,12 +117,14 @@
       // Initialize slider
       showSlide(currentIndex);
 
-      // Fade-in text la încărcare
+      // Fade-in effect for elements with class 'fade-in'
       const fadeElements = document.querySelectorAll('.fade-in');
-      fadeElements.forEach((el, i) => {
+      fadeElements.forEach(el => {
+        el.style.opacity = 0;
         setTimeout(() => {
-          el.classList.add('visible');
-        }, i * 400 + 100); // delay între ele
+          el.style.transition = 'opacity 0.8s ease-in-out';
+          el.style.opacity = 1;
+        }, 100);
       });
     });
   </script>
