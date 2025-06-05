@@ -3,99 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mese de Sticlă</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <title>Mese de Sticlă Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1e1e2f;
+      color: #f2f2f2;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #00b4d8;
-      color: white;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      padding: 60px 20px;
       text-align: center;
+      color: #ffffff;
     }
 
-    h1 {
-      font-size: 36px;
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.8;
     }
 
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     .product {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      margin-bottom: 40px;
       overflow: hidden;
-      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
     }
 
     .product:hover {
-      transform: scale(1.02);
+      transform: scale(1.01);
     }
 
     .product img {
       width: 100%;
       height: auto;
+      display: block;
     }
 
     .details {
-      padding: 20px;
+      padding: 24px;
     }
 
     .details h2 {
-      margin-top: 0;
-      color: #00b4d8;
+      font-size: 1.6em;
+      color: #00c9a7;
+      margin-bottom: 10px;
+    }
+
+    .details p {
+      color: #ccc;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 10px;
-      background-color: #25D366;
-      color: white;
-      padding: 10px 16px;
+      margin-top: 16px;
+      background-color: #00c9a7;
+      color: #fff;
+      padding: 12px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #1ca34d;
+      background-color: #00b498;
     }
 
     .map {
-      margin-top: 40px;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      margin-top: 60px;
     }
 
     footer {
-      background-color: #00b4d8;
-      color: white;
+      background-color: #12121c;
+      color: #888;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 30px;
+      margin-top: 60px;
+      font-size: 0.9em;
     }
 
-    @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 28px;
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
       }
 
       .details h2 {
-        font-size: 20px;
+        font-size: 1.3em;
+      }
+
+      .btn {
+        font-size: 0.95em;
       }
     }
   </style>
@@ -103,41 +128,41 @@
 <body>
 
 <header>
-  <h1>Mese de Sticlă</h1>
-  <p>Calitate, eleganță și funcționalitate</p>
+  <h1>Mese de Sticlă Premium</h1>
+  <p>Design modern pentru case elegante</p>
 </header>
 
 <div class="container">
 
   <!-- PRODUS 1 -->
   <div class="product">
-    <img src="https://via.placeholder.com/800x400" alt="Masa 1">
+    <img src="https://via.placeholder.com/1200x600?text=Masa+Sticla+1" alt="Masa 1">
     <div class="details">
-      <h2>Masa Sticlă Transparentă</h2>
+      <h2>Masa Minimalistă Transparentă</h2>
       <p>Dimensiuni: 120x60cm<br>Sticlă securizată 10mm<br>Preț: 1500 RON</p>
-      <a class="btn" href="https://wa.me/40712345678?text=Salut,%20sunt%20interesat%20de%20masa%20transparentă%20de%201200x600" target="_blank">Comandă pe WhatsApp</a>
+      <a class="btn" href="https://wa.me/40712345678?text=Salut,%20sunt%20interesat%20de%20masa%20transparentă%201200x600" target="_blank">Comandă pe WhatsApp</a>
     </div>
   </div>
 
   <!-- PRODUS 2 -->
   <div class="product">
-    <img src="https://via.placeholder.com/800x400" alt="Masa 2">
+    <img src="https://via.placeholder.com/1200x600?text=Masa+Sticla+2" alt="Masa 2">
     <div class="details">
-      <h2>Masa Sticlă Neagră</h2>
-      <p>Dimensiuni: 140x70cm<br>Sticlă fumurie<br>Preț: 1700 RON</p>
-      <a class="btn" href="https://wa.me/40712345678?text=Salut,%20sunt%20interesat%20de%20masa%20neagră%20de%201400x700" target="_blank">Comandă pe WhatsApp</a>
+      <h2>Masa Neagră Elegantă</h2>
+      <p>Dimensiuni: 140x70cm<br>Sticlă fumurie cu margini rotunjite<br>Preț: 1700 RON</p>
+      <a class="btn" href="https://wa.me/40712345678?text=Salut,%20sunt%20interesat%20de%20masa%20neagră%201400x700" target="_blank">Comandă pe WhatsApp</a>
     </div>
   </div>
 
   <!-- HARTĂ -->
   <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.893462610875!2d26.10253831545754!3d44.42676777910265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff376e01ab2b%3A0xd26fabb9debf20d6!2sBucuresti!5e0!3m2!1sro!2sro!4v1681234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
   </div>
 
 </div>
 
 <footer>
-  &copy; 2025 Mese de Sticlă - Toate drepturile rezervate
+  &copy; 2025 Mese de Sticlă Premium - Toate drepturile rezervate
 </footer>
 
 </body>
