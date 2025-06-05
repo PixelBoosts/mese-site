@@ -298,3 +298,80 @@
 </html>
 
 <div id="galerie" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4"></div>
+<style>
+.slider {
+  position: relative;
+  max-width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+</style>
+<script>
+let slideIndex = 0;
+let slides = document.getElementsByClassName("slide");
+let interval = setInterval(nextSlide, 3000); // schimbă poza la 3 secunde
+
+function showSlide(index) {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slides[index].classList.add("active");
+}
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+}
+
+function prevSlide() {
+  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+  showSlide(slideIndex);
+}
+
+function pauseSlider() {
+  clearInterval(interval);
+}
+
+function resumeSlider() {
+  interval = setInterval(nextSlide, 3000);
+}
+
+// Inițializăm primul slide
+showSlide(slideIndex);
+</script>
