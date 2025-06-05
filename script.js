@@ -1,16 +1,48 @@
-const container = document.getElementById('galerie');
+document.addEventListener('DOMContentLoaded', () => {
+  // Slider
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let currentIndex = 0;
 
-for (let i = 1; i <= 28; i++) {
-  const link = document.createElement('a');
-  link.href = `images/masa-sticla${i}.jpg`;
-  link.setAttribute("data-lightbox", "galerie");
-  link.setAttribute("data-title", `Masă din sticlă ${i}`);
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
 
-  const img = document.createElement('img');
-  img.src = `images/masa-sticla${i}.jpg`;
-  img.alt = `masă din sticlă ${i}`;
-  img.className = "w-full rounded-xl shadow-md hover:shadow-xl transition-all duration-300";
+  function showNext() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
 
-  link.appendChild(img);
-  container.appendChild(link);
-}
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  // Initialize slider
+  showSlide(currentIndex);
+
+  // Fade-in effect for elements with class 'fade-in'
+  const fadeElements = document.querySelectorAll('.fade-in');
+  fadeElements.forEach(el => {
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.8s ease-in-out';
+      el.style.opacity = 1;
+    }, 100);
+  });
+
+  // Optional: Auto-slide every 5 seconds
+  // setInterval(showNext, 5000);
+
+  // --- Dacă ai hartă, inițializeaz-o aici ---
+  // Exemplu simplu Google Maps sau Leaflet (în funcție de ce folosești)
+  // function initMap() {
+  //   // codul pentru hartă
+  // }
+});
