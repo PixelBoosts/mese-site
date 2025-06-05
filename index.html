@@ -182,6 +182,43 @@
   });
 </script>
 
+  <script>
+  let currentSlide = 0;
+  let slides = document.querySelectorAll('.slider .slide');
+  let interval = setInterval(nextSlide, 4000);
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function pauseSlider() {
+    clearInterval(interval);
+  }
+
+  function resumeSlider() {
+    interval = setInterval(nextSlide, 4000);
+  }
+
+  // Inițializare
+  document.addEventListener("DOMContentLoaded", () => {
+    slides = document.querySelectorAll('.slider .slide');
+    showSlide(currentSlide);
+  });
+</script>
+
 
 </body>
 </html>
