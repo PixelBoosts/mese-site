@@ -326,6 +326,23 @@
     showSlide(slideIndex);
   });
 </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+
+    images.forEach((img) => {
+      img.onerror = () => {
+        console.error("❌ Imaginea NU a fost încărcată corect:", img.src);
+        img.style.border = "2px solid red"; // evidențiază imaginea cu probleme
+      };
+
+      img.onload = () => {
+        console.log("✅ Imagine încărcată corect:", img.src);
+      };
+    });
+  });
+</script>
+
 
 </body>
 </html>
