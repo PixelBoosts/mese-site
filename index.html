@@ -293,6 +293,39 @@
 
   <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+  let slideIndex = 0;
+  let slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  let interval = setInterval(nextSlide, 3000);
+
+  function pauseSlider() {
+    clearInterval(interval);
+  }
+
+  function resumeSlider() {
+    interval = setInterval(nextSlide, 3000);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlide(slideIndex);
+  });
+</script>
 
 </body>
 </html>
@@ -342,36 +375,4 @@
   background-color: rgba(0,0,0,0.8);
 }
 </style>
-<script>
-let slideIndex = 0;
-let slides = document.getElementsByClassName("slide");
-let interval = setInterval(nextSlide, 3000); // schimbă poza la 3 secunde
 
-function showSlide(index) {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-  }
-  slides[index].classList.add("active");
-}
-
-function nextSlide() {
-  slideIndex = (slideIndex + 1) % slides.length;
-  showSlide(slideIndex);
-}
-
-function prevSlide() {
-  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-  showSlide(slideIndex);
-}
-
-function pauseSlider() {
-  clearInterval(interval);
-}
-
-function resumeSlider() {
-  interval = setInterval(nextSlide, 3000);
-}
-
-// Inițializăm primul slide
-showSlide(slideIndex);
-</script>
