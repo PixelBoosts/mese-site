@@ -135,14 +135,21 @@
 <div class="container">
 
   <!-- PRODUS 1 -->
-  <div class="product">
-    <img src="https://via.placeholder.com/1200x600?text=Masa+Sticla+1" alt="Masa 1">
-    <div class="details">
-      <h2>Masa Minimalistă Transparentă</h2>
-      <p>Dimensiuni: 120x60cm<br>Sticlă securizată 10mm<br>Preț: 1500 RON</p>
-      <a class="btn" href="https://wa.me/40712345678?text=Salut,%20sunt%20interesat%20de%20masa%20transparentă%201200x600" target="_blank">Comandă pe WhatsApp</a>
-    </div>
+<div class="product fade-in">
+  <div class="slider" onmouseover="pauseSlider()" onmouseout="resumeSlider()">
+    <img src="img/masa1.jpg" class="slide active" alt="Masa 1">
+    <img src="img/masa1_2.jpg" class="slide" alt="Masa 1 - poză secundară">
+    <img src="img/masa1_3.jpg" class="slide" alt="Masa 1 - poză 3">
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
   </div>
+  <div class="details">
+    <h2>Masa Elegantă din Sticlă</h2>
+    <p>Sticlă securizată, picior din metal premium, design modern 2026. Disponibilă la comandă.</p>
+    <a class="btn" href="https://wa.me/40700000000?text=Salut!%20Vreau%20mai%20multe%20detalii%20despre%20masa%20eleganta%20din%20sticla.">Contactează pe WhatsApp</a>
+  </div>
+</div>
+
 
   <!-- PRODUS 2 -->
   <div class="product">
