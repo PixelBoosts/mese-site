@@ -1,137 +1,183 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mese de Sticlă</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mese de Sticlă - Eleganță și Calitate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
       color: #333;
     }
 
     header {
-      background: #111;
-      color: #fff;
-      padding: 20px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      padding: 40px 20px;
       text-align: center;
+      color: white;
     }
 
     header h1 {
-      margin: 0;
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
-    .intro {
-      text-align: center;
-      padding: 20px;
+    header p {
+      font-size: 18px;
     }
 
-    .product-container {
+    .section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .products {
       display: flex;
       flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
       padding: 20px;
     }
 
-    .product {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin: 15px;
-      width: 300px;
-      padding: 15px;
-      text-align: center;
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
     }
 
-    .product img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .product h3 {
-      margin-top: 10px;
-      font-size: 20px;
-    }
-
-    .product p {
-      font-size: 14px;
+    .card p {
+      font-size: 15px;
       color: #555;
     }
 
-    .whatsapp-button {
+    .btn {
       display: inline-block;
+      margin-top: 15px;
       background-color: #25D366;
       color: white;
-      padding: 10px 15px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1ca650;
     }
 
     .about, .contact {
-      padding: 40px 20px;
-      text-align: center;
-      background: #fff;
+      background: white;
+      border-radius: 12px;
+      margin-top: 40px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .about p, .contact p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
     footer {
+      background: #0072ff;
+      color: white;
       text-align: center;
-      padding: 15px;
-      background: #111;
-      color: #fff;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Mese de Sticlă Premium</h1>
-  <p>Calitate, eleganță și durabilitate</p>
+  <h1>Mese de Sticlă</h1>
+  <p>Design modern pentru un interior elegant</p>
 </header>
 
-<section class="intro">
-  <p>Descoperă colecția noastră de mese de sticlă fabricate cu atenție la detalii. Comandă rapid prin WhatsApp!</p>
-</section>
+<section class="section">
+  <h2 style="text-align:center; margin-bottom: 30px;">Produsele Noastre</h2>
+  <div class="products">
 
-<section class="product-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Masa A">
+      <div class="card-content">
+        <h3>Masa Model A</h3>
+        <p>Dimensiuni: 120x60cm<br>Sticlă securizată<br>Preț: 1500 RON</p>
+        <a class="btn" href="https://wa.me/40712345678?text=Vreau%20masa%20Model%20A" target="_blank">Comandă pe WhatsApp</a>
+      </div>
+    </div>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/300x200" alt="Masa Model A">
-    <h3>Masa Model A</h3>
-    <p>Sticlă securizată, 120x60cm<br>Preț: 1500 RON</p>
-    <a class="whatsapp-button" target="_blank" href="https://wa.me/40712345678?text=Bună%20ziua!%20Sunt%20interesat%20de%20masa%20Model%20A%20care%20costă%201500%20RON.%20Aș%20dori%20mai%20multe%20detalii.">Comandă pe WhatsApp</a>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Masa B">
+      <div class="card-content">
+        <h3>Masa Model B</h3>
+        <p>Dimensiuni: 140x70cm<br>Sticlă fumurie<br>Preț: 1700 RON</p>
+        <a class="btn" href="https://wa.me/40712345678?text=Vreau%20masa%20Model%20B" target="_blank">Comandă pe WhatsApp</a>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <div class="product">
-    <img src="https://via.placeholder.com/300x200" alt="Masa Model B">
-    <h3>Masa Model B</h3>
-    <p>Sticlă fumurie, 140x70cm<br>Preț: 1700 RON</p>
-    <a class="whatsapp-button" target="_blank" href="https://wa.me/40712345678?text=Bună%20ziua!%20Sunt%20interesat%20de%20masa%20Model%20B%20care%20costă%201700%20RON.%20Aș%20dori%20mai%20multe%20detalii.">Comandă pe WhatsApp</a>
+<section class="section about">
+  <h2 style="text-align:center;">Despre Noi</h2>
+  <p style="text-align:center; max-width:800px; margin: auto;">
+    Suntem o echipă pasionată de design interior și realizăm mese de sticlă la comandă. Produsele noastre combină estetica cu durabilitatea, pentru clienți care vor calitate și stil în locuința lor.
+  </p>
+</section>
+
+<section class="section contact">
+  <h2 style="text-align:center;">Contact</h2>
+  <p style="text-align:center;">Telefon: <strong>+40 712 345 678</strong><br>Email: <strong>contact@mesesticla.ro</strong></p>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.893462610875!2d26.10253831545754!3d44.42676777910265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff376e01ab2b%3A0xd26fabb9debf20d6!2sBucuresti!5e0!3m2!1sro!2sro!4v1681234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
-
-  <!-- Adaugă mai multe produse după același model -->
-
-</section>
-
-<section class="about">
-  <h2>Despre Noi</h2>
-  <p>Suntem specializați în realizarea meselor de sticlă la comandă, cu materiale de cea mai bună calitate. Livrăm în toată țara.</p>
-</section>
-
-<section class="contact">
-  <h2>Contact</h2>
-  <p>Telefon: <strong>+40 712 345 678</strong><br>Email: <strong>mese@exemplu.ro</strong></p>
-  <a class="whatsapp-button" target="_blank" href="https://wa.me/40712345678?text=Bună%20ziua!%20Aș%20dori%20mai%20multe%20informații%20despre%20mesele%20din%20sticlă.">Scrie-ne pe WhatsApp</a>
 </section>
 
 <footer>
-  &copy; 2025 Mese de Sticlă Premium. Toate drepturile rezervate.
+  &copy; 2025 Mese de Sticlă. Toate drepturile rezervate.
 </footer>
 
 </body>
