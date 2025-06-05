@@ -280,6 +280,18 @@
   });
 </script>
 
+  <script>
+  const map = L.map('map').setView([45.7489, 21.2087], 13); // coordonate Craiova (exemplu)
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  const marker = L.marker([45.7489, 21.2087]).addTo(map);
+  marker.bindPopup("<b>Mese Sticlă Craiova</b><br>Atelier & Showroom").openPopup();
+</script>
+
 
 </body>
 </html>
