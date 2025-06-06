@@ -46,3 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
   //   // codul pentru hartă
   // }
 });
+
+const whatsappImages = document.querySelectorAll('.whatsapp-slider img');
+let currentIndex = 0;
+
+function changeImage() {
+  whatsappImages[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % whatsappImages.length;
+  whatsappImages[currentIndex].classList.add('active');
+}
+
+// schimbă poza la fiecare 3 secunde
+setInterval(changeImage, 3000);
