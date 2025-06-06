@@ -259,3 +259,19 @@ footer {
   opacity: 1;
   position: relative;
 }
+
+.whatsapp-slider img {
+  margin: 10px;
+}
+.whatsapp-slider img {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.whatsapp-slider img.active {
+  display: block;
+  margin: 15px auto; /* adaugă spațiu */
+}
